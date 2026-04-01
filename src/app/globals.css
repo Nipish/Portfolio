@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Pixel-art font ───────────────────────────────────────────────────────── */
+/* Press Start 2P is the canonical 8-bit font. Loaded in layout.tsx via next/font */
+
+/* ─── Global resets ────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  /* Enforce square corners everywhere for the pixel-art aesthetic */
+  border-radius: 0 !important;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* No scrollbars on the desktop */
+  height: 100%;
+  width: 100%;
+}
+
+/* ─── CSS custom properties (design tokens) ───────────────────────────────── */
+:root {
+  /* XP colour palette */
+  --xp-blue:          #003c7e;
+  --xp-blue-light:    #2f6fd4;
+  --xp-blue-mid:      #1a4da8;
+  --xp-titlebar:      linear-gradient(180deg, #2f6fd4 0%, #1a4da8 100%);
+
+  --xp-gray:          #ece9d8;
+  --xp-gray-dark:     #d4d0c8;
+  --xp-gray-border:   #aca899;
+
+  --xp-white:         #ffffff;
+  --xp-black:         #000000;
+
+  /* Shadows */
+  --xp-shadow:        4px 4px 0 rgba(0, 0, 0, 0.5);
+
+  /* Desktop fallback */
+  --desktop-bg:       #008080;
+}
+
+/* ─── Utility: pixel-art image rendering ──────────────────────────────────── */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* Firefox */
+}
+
+/* ─── Text shadow for icon labels ─────────────────────────────────────────── */
+.pixel-label {
+  text-shadow:
+    1px  1px 0 rgba(0, 0, 0, 0.9),
+   -1px -1px 0 rgba(0, 0, 0, 0.6);
+}
