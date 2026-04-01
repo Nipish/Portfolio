@@ -29,6 +29,8 @@ export default function Window({
   onFocus,
   onUpdatePosition,
 }: WindowProps) {
+  const DEFAULT_WINDOW_HEIGHT = 'min(700px, calc(100vh - 64px))';
+
   // Track drag delta between mousemove calls
   const dragOffset = useRef<{ x: number; y: number } | null>(null);
 
@@ -82,7 +84,7 @@ export default function Window({
         top: win.position.y,
         left: win.position.x,
         width: win.size.width,
-        height: win.size.height,
+        height: DEFAULT_WINDOW_HEIGHT,
       };
 
   if (win.isMinimized) return null;

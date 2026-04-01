@@ -1,6 +1,6 @@
 'use client';
 import type { AppId } from '@/types/window';
-//import ResumeApp from '@/components/apps/ResumeApp';
+import ResumeApp from '@/components/apps/ResumeApp';
 // ── Lazy-import each app so unused apps don't bloat the initial bundle ────────
 // Replace placeholder content with real components as you build them.
 
@@ -20,7 +20,7 @@ export default function WindowContent({ appId }: WindowContentProps) {
     case 'about':
       return <AboutApp />;
     case 'resume':
-      return <ResumeApp />;
+      return <ResumeAppComponent />;
     case 'contact':
       return <ContactApp />;
     default:
@@ -58,15 +58,10 @@ function AboutApp() {
   );
 }
 
-function ResumeApp() {
+function ResumeAppComponent() {
   return (
     <AppShell title="Resume">
-      <p className="font-pixel text-[9px] text-[#333] leading-relaxed">
-        Replace this with your <strong>ResumeApp</strong> component.
-        <br />
-        <br />
-        📁 /src/components/apps/ResumeApp.tsx
-      </p>
+  <ResumeApp />
     </AppShell>
   );
 }
