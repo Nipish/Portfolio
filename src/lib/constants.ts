@@ -35,22 +35,22 @@ export const WINDOW_DEFAULTS: Record<
 > = {
   projects: {
     title: 'Projects',
-    size: { width: 720, height: 480 },
-    position: { x: 160, y: 60 },
+    size: { width: 940, height: 480 },
+    position: { x: 160, y: 40 },
   },
   about: {
     title: 'About Me',
-    size: { width: 600, height: 420 },
-    position: { x: 200, y: 80 },
+    size: { width: 640, height: 800 },
+    position: { x: 280, y: 40 },
   },
   resume: {
     title: 'Resume',
-    size: { width: 640, height: 520 },
-    position: { x: 240, y: 60 },
+    size: { width: 640, height: 800 },
+    position: { x: 240, y: 20 },
   },
   contact: {
     title: 'Contact',
     size: { width: 520, height: 400 },
-    position: { x: 280, y: 100 },
+    position: { x: 280, y: 30 },
   },
 };
