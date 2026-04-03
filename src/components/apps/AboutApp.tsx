@@ -59,7 +59,7 @@ export default function AboutApp() {
       {/* ── Header: name + role ───────────────────────────────────────────── */}
       <div className="flex items-start gap-4 pb-3 border-b-2 border-[#aca899]">
         {/* Avatar placeholder – replace src with your own photo in /public */}
-        <div className="w-16 h-16 shrink-0 bg-[#d4d0c8] border-2 border-[#808080] flex items-center justify-center">
+        <div className="w-20 h-20 shrink-0 bg-[#d4d0c8] border-2 border-[#808080] flex items-center justify-center">
           <span className="font-pixel text-[18px]">👤</span>
         </div>
         <div className="flex flex-col gap-1">
@@ -72,6 +72,19 @@ export default function AboutApp() {
           <p className="font-pixel text-[7px] text-[#666] uppercase">
             📍 {ABOUT.location}
           </p>
+          <div className="flex flex-wrap gap-2 mt-2">
+          {ABOUT.links.map((link) => (
+            <a
+              key={link.label}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-pixel text-[7px] text-[#1a1a1a] uppercase px-3 py-1 bg-[#ece9d8] border-2 border-t-white border-l-white border-b-[#808080] border-r-[#808080] hover:bg-[#d4d0c8] no-underline"
+            >
+              {link.label} 
+            </a>
+          ))}
+        </div>
         </div>
       </div>
 
@@ -121,22 +134,7 @@ export default function AboutApp() {
         </div>
       </Section>
 
-      {/* ── Links ────────────────────────────────────────────────────────── */}
-      <Section title="Links">
-        <div className="flex flex-wrap gap-2">
-          {ABOUT.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-pixel text-[7px] text-[#1a1a1a] uppercase px-3 py-1 bg-[#ece9d8] border-2 border-t-white border-l-white border-b-[#808080] border-r-[#808080] hover:bg-[#d4d0c8] no-underline"
-            >
-              {link.label} ↗
-            </a>
-          ))}
-        </div>
-      </Section>
+    
 
     </div>
   );
