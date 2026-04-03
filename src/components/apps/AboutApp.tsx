@@ -77,7 +77,7 @@ export default function AboutApp() {
 
       {/* ── Bio ───────────────────────────────────────────────────────────── */}
       <Section title="About">
-        <p className="font-pixel text-[9px] text-[#333] leading-loose whitespace-pre-line">
+        <p className="font-vt323 text-[16px] text-[#333] leading-normal whitespace-pre-line">
           {ABOUT.bio}
         </p>
       </Section>
@@ -88,7 +88,7 @@ export default function AboutApp() {
           {ABOUT.skills.map((skill) => (
             <span
               key={skill}
-              className="font-pixel text-[7px] text-[#1a1a1a] uppercase px-2 py-1 bg-[#d4d0c8] border border-[#808080]"
+              className="font-vt323 text-[12px] text-[#1a1a1a] uppercase px-2 py-1 bg-[#d4d0c8] border border-[#808080]"
             >
               {skill}
             </span>
@@ -102,18 +102,18 @@ export default function AboutApp() {
           {ABOUT.experience.map((job) => (
             <div
               key={job.company}
-              className="border-l-2 border-[#316AC5] pl-3 flex flex-col gap-0.5"
+              className="border-l-2 border-[#316AC5] pl-3 flex flex-col gap-0.0"
             >
-              <span className="font-pixel text-[8px] text-[#1a1a1a] uppercase">
+              <span className="font-vt323 text-[16px] text-[#1a1a1a] uppercase">
                 {job.role}
               </span>
-              <span className="font-pixel text-[7px] text-[#316AC5] uppercase">
+              <span className="font-vt323 text-[14px] text-[#316AC5] uppercase">
                 {job.company}
               </span>
-              <span className="font-pixel text-[7px] text-[#666] uppercase">
+              <span className="font-vt323 text-[14px] text-[#666] uppercase">
                 {job.period}
               </span>
-              <p className="font-pixel text-[7px] text-[#444] leading-relaxed mt-1">
+              <p className="font-vt323 text-[14px] text-[#444] leading-relaxed mt-1">
                 {job.description}
               </p>
             </div>
