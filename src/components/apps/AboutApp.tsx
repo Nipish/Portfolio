@@ -45,9 +45,9 @@ const ABOUT = {
   ],
 
   links: [
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nipish-saini/' },
-    { label: 'Behance', url: 'https://www.behance.net/nipishsaini' },
-    { label: 'Dribbble',   url: 'https://dribbble.com/Nipish' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/nipish-saini/', icon: '/icons/linkedin.png' },
+    { label: 'Behance', url: 'https://www.behance.net/nipishsaini', icon: '/icons/behance.png' },
+    { label: 'Dribbble',   url: 'https://dribbble.com/Nipish', icon: '/icons/dribbble.png' },
   ],
 };
 
@@ -59,29 +59,35 @@ export default function AboutApp() {
       {/* ── Header: name + role ───────────────────────────────────────────── */}
       <div className="flex items-start gap-4 pb-3 border-b-2 border-[#aca899]">
         {/* Avatar placeholder – replace src with your own photo in /public */}
-        <div className="w-20 h-20 shrink-0 bg-[#d4d0c8] border-2 border-[#808080] flex items-center justify-center">
-          <span className="font-pixel text-[18px]">👤</span>
+        <div className="w-24 h-24 shrink-0 bg-[#d4d0c8] border-2 border-[#808080] overflow-hidden flex items-center justify-center">
+          <img
+             src="/avatar.png"
+             alt="Nipish Saini"
+            width={96}
+            height={96}
+            className="w-full h-full object-cover"
+             />
         </div>
         <div className="flex flex-col gap-1">
           <h1 className="font-pixel text-[11px] text-[#1a1a1a] uppercase tracking-wide">
             {ABOUT.name}
           </h1>
-          <p className="font-pixel text-[8px] text-[#316AC5] uppercase tracking-wide">
+          <p className="font-pixel text-[8px] text-[#316AC5] mt-1 uppercase tracking-wide">
             {ABOUT.role}
           </p>
-          <p className="font-pixel text-[7px] text-[#666] uppercase">
+          <p className="font-pixel text-[7px] text-[#666] mt-1 uppercase">
             📍 {ABOUT.location}
           </p>
-          <div className="flex flex-wrap gap-2 mt-2">
+          <div className="flex flex-wrap gap-2 mt-3">
           {ABOUT.links.map((link) => (
             <a
               key={link.label}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-pixel text-[7px] text-[#1a1a1a] uppercase px-3 py-1 bg-[#ece9d8] border-2 border-t-white border-l-white border-b-[#808080] border-r-[#808080] hover:bg-[#d4d0c8] no-underline"
-            >
-              {link.label} 
+              className="flex items-center gap-1 font-pixel text-[7px] text-[#1a1a1a] uppercase px-3 py-1 bg-[#ece9d8] border-2 border-t-white border-l-white border-b-[#808080] border-r-[#808080] hover:bg-[#d4d0c8] no-underline"            >
+              <img src={link.icon} alt={link.label} width={14} height={14} />
+              {link.label}
             </a>
           ))}
         </div>
