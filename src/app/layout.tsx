@@ -20,9 +20,6 @@ const vt323 = VT323({
 export const metadata: Metadata = {
   title: 'NIPISH SAINI',
   description: 'Portfolio — Windows XP pixel-art style desktop',
-  icons: {
-    icon: '/favicon.png',
-  },
 };
 
 // ─── Layout ───────────────────────────────────────────────────────────────────
