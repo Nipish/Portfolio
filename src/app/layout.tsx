@@ -18,8 +18,11 @@ const vt323 = VT323({
 });
 // ─── SEO metadata ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'ARCHITECT_OS v1.0.4',
+  title: 'NIPISH SAINI',
   description: 'Portfolio — Windows XP pixel-art style desktop',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 // ─── Layout ───────────────────────────────────────────────────────────────────
