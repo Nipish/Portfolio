@@ -7,17 +7,39 @@ import AboutApp from '../apps/AboutApp';
 
 interface WindowContentProps {
   appId: AppId;
+  isMaximized: boolean;
 }
+
+const PROJECTS = [
+  {
+    title: 'Nulume',
+    description:
+      'A retro desktop-style portfolio with draggable windows and app-like sections.',
+    imageSrc: '/Projects/Nulume.png',
+  },
+  {
+    title: 'Project Two',
+    description:
+      'Replace this with a short summary of your second project and impact.',
+    imageSrc: '/icons/about.png',
+  },
+  {
+    title: 'Project Three',
+    description:
+      'Replace this with one or two lines about what the app does and why it matters.',
+    imageSrc: '/icons/contact.png',
+  },
+];
 
 // ─── Component ────────────────────────────────────────────────────────────────
 //
 // Acts as a router: given an appId, renders the matching app component.
 // Add a new case here every time you build a new app.
 //
-export default function WindowContent({ appId }: WindowContentProps) {
+export default function WindowContent({ appId, isMaximized }: WindowContentProps) {
   switch (appId) {
     case 'projects':
-      return <ProjectsApp />;
+      return <ProjectsApp isMaximized={isMaximized} />;
     case 'about':
       return <AboutAppComponent />;
     case 'resume':
@@ -33,15 +55,31 @@ export default function WindowContent({ appId }: WindowContentProps) {
 // Placeholder apps – replace each with a real component in /src/components/apps/
 // ─────────────────────────────────────────────────────────────────────────────
 
-function ProjectsApp() {
+function ProjectsApp({ isMaximized }: { isMaximized: boolean }) {
   return (
     <AppShell title="My Projects">
-      <p className="font-pixel text-[9px] text-[#333] leading-relaxed">
-        Replace this with your <strong>ProjectsApp</strong> component.
-        <br />
-        <br />
-        📁 /src/components/apps/ProjectsApp.tsx
-      </p>
+      <div className={`grid gap-3 ${isMaximized ? 'grid-cols-3' : 'grid-cols-2'}`}>
+        {PROJECTS.map((project) => (
+          <article
+            key={project.title}
+            className="bg-[#ece9d8] border-2 border-t-white border-l-white border-b-[#808080] border-r-[#808080] p-3 flex flex-col gap-2"
+          >
+            <div className="w-full aspect-video bg-[#d4d0c8] border border-[#808080] overflow-hidden">
+              <img
+                src={project.imageSrc}
+                alt={`${project.title} preview`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="font-pixel text-[9px] text-[#1a1a1a] uppercase tracking-wide">
+              {project.title}
+            </h3>
+            <p className="font-pixel text-[7px] text-[#333] leading-relaxed">
+              {project.description}
+            </p>
+          </article>
+        ))}
+      </div>
     </AppShell>
   );
 }
