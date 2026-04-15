@@ -115,18 +115,6 @@ export default function Window({
         onClose={onClose}
       />
 
-      {/* Menu bar placeholder (expand later) */}
-      <div className="flex items-center gap-4 px-2 py-0.5 bg-[#ece9d8] border-b border-[#aca899]">
-        {['File', 'Edit', 'View', 'Help'].map((item) => (
-          <span
-            key={item}
-            className="font-pixel text-[8px] text-[#1a1a1a] uppercase hover:bg-[#316ac5] hover:text-white px-1 py-0.5 cursor-pointer"
-          >
-            {item}
-          </span>
-        ))}
-      </div>
-
       {/* Content area – each app renders here */}
       <div
         className={`flex-1 overflow-auto bg-white border border-[#aca899] ${
