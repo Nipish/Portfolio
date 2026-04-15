@@ -171,7 +171,7 @@ function PlaceholderApp({ appId }: { appId: string }) {
 function AppShell({
   title,
   children,
-  showHeader = true,
+  showHeader = false,
 }: {
   title: string;
   children: React.ReactNode;
