@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import type { AppId } from '@/types/window';
 import ResumeApp from '@/components/apps/ResumeApp';
 import AboutApp from '../apps/AboutApp';
@@ -16,18 +17,21 @@ const PROJECTS = [
     description:
       'A retro desktop-style portfolio with draggable windows and app-like sections.',
     imageSrc: '/Projects/Nulume.png',
+    pdfUrl: '/Projects/Nulume.pdf',
   },
   {
     title: 'Project Two',
     description:
       'Replace this with a short summary of your second project and impact.',
     imageSrc: '/icons/about.png',
+    pdfUrl: '/Projects/ProjectTwo.pdf',
   },
   {
     title: 'Project Three',
     description:
       'Replace this with one or two lines about what the app does and why it matters.',
     imageSrc: '/icons/contact.png',
+    pdfUrl: '/Projects/ProjectThree.pdf',
   },
 ];
 
@@ -56,13 +60,52 @@ export default function WindowContent({ appId, isMaximized }: WindowContentProps
 // ─────────────────────────────────────────────────────────────────────────────
 
 function ProjectsApp({ isMaximized }: { isMaximized: boolean }) {
+  const [activeProject, setActiveProject] = useState<(typeof PROJECTS)[number] | null>(
+    null
+  );
+
+  if (activeProject) {
+    return (
+      <AppShell title="My Projects" showHeader={false}>
+        <div className="h-full flex flex-col gap-2">
+          <div className="flex items-center gap-2 font-pixel text-[7px] text-[#1a1a1a] uppercase">
+            <button
+              type="button"
+              onClick={() => setActiveProject(null)}
+              className="px-2 py-1 bg-[#ece9d8] border border-[#808080] hover:bg-[#d4d0c8]"
+            >
+              Back
+            </button>
+            <span className="text-[#666]">Projects</span>
+            <span className="text-[#666]">/</span>
+            <span>{activeProject.title}</span>
+          </div>
+
+          <div
+            className={`flex-1 bg-white border border-[#808080] overflow-hidden ${
+              isMaximized ? '-mx-4' : ''
+            }`}
+          >
+            <iframe
+              src={`${activeProject.pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+              title={`${activeProject.title} PDF`}
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      </AppShell>
+    );
+  }
+
   return (
-    <AppShell title="My Projects">
+    <AppShell title="My Projects" showHeader={false}>
       <div className={`grid gap-3 ${isMaximized ? 'grid-cols-3' : 'grid-cols-2'}`}>
         {PROJECTS.map((project) => (
-          <article
+          <button
+            type="button"
             key={project.title}
-            className="bg-[#ece9d8] border-2 border-t-white border-l-white border-b-[#808080] border-r-[#808080] p-3 flex flex-col gap-2"
+            onClick={() => setActiveProject(project)}
+            className="text-left bg-[#ece9d8] border-2 border-t-white border-l-white border-b-[#808080] border-r-[#808080] p-3 flex flex-col gap-2 hover:bg-[#d4d0c8]"
           >
             <div className="w-full aspect-video bg-[#d4d0c8] border border-[#808080] overflow-hidden">
               <img
@@ -77,7 +120,7 @@ function ProjectsApp({ isMaximized }: { isMaximized: boolean }) {
             <p className="font-pixel text-[7px] text-[#333] leading-relaxed">
               {project.description}
             </p>
-          </article>
+          </button>
         ))}
       </div>
     </AppShell>
@@ -128,15 +171,19 @@ function PlaceholderApp({ appId }: { appId: string }) {
 function AppShell({
   title,
   children,
+  showHeader = true,
 }: {
   title: string;
   children: React.ReactNode;
+  showHeader?: boolean;
 }) {
   return (
     <div className="p-4 h-full flex flex-col gap-3">
-      <h2 className="font-pixel text-[10px] text-[#1a1a1a] uppercase tracking-wider border-b border-[#ccc] pb-2">
-        {title}
-      </h2>
+      {showHeader ? (
+        <h2 className="font-pixel text-[10px] text-[#1a1a1a] uppercase tracking-wider border-b border-[#ccc] pb-2">
+          {title}
+        </h2>
+      ) : null}
       <div className="flex-1">{children}</div>
     </div>
   );

@@ -128,7 +128,11 @@ export default function Window({
       </div>
 
       {/* Content area – each app renders here */}
-      <div className="flex-1 overflow-auto bg-white border border-[#aca899] m-1">
+      <div
+        className={`flex-1 overflow-auto bg-white border border-[#aca899] ${
+          win.isMaximized ? 'm-0' : 'm-1'
+        }`}
+      >
         <WindowContent appId={win.appId} isMaximized={win.isMaximized} />
       </div>
 
