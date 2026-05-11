@@ -20,8 +20,16 @@ const PROJECT_PAGES: Record<string, ProjectPageData> = {
     ],
   },
   'project-two': {
-    title: 'Project Two',
-    sectionImages: ['/icons/about.png'],
+    title: 'Pet E-commerce Onboarding Optimization',
+    sectionImages: [
+      '/Projects/SUP/SUP%201.png',
+      '/Projects/SUP/SUP%202.png',
+      '/Projects/SUP/SUP%203.png',
+      '/Projects/SUP/SUP%204.png',
+      '/Projects/SUP/SUP%205.png',
+      '/Projects/SUP/SUP%206.png',
+      '/Projects/SUP/SUP%207.png',
+    ],
   },
   'project-three': {
     title: 'Project Three',

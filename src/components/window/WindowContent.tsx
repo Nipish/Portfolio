@@ -25,7 +25,7 @@ const PROJECTS: ProjectEntry[] = [
   {
     title: 'Nulume',
     description:
-      'A retro desktop-style portfolio with draggable windows and app-like sections.',
+      'Enterprise Workflow & Ticketing System for Oil & Gas',
     imageSrc: '/Projects/Nulume.png',
     sectionImages: [
       '/Projects/Nulume/Nulume-01.png',
@@ -40,11 +40,19 @@ const PROJECTS: ProjectEntry[] = [
     openUrl: '/projects/nulume',
   },
   {
-    title: 'Project Two',
+    title: 'Pet E-commerce Onboarding Optimization',
     description:
-      'Replace this with a short summary of your second project and impact.',
-    imageSrc: '/icons/about.png',
-    sectionImages: ['/icons/about.png'],
+      'Improved onboarding flow for a pet e-commerce experience to reduce friction and increase completion.',
+    imageSrc: '/Projects/SUP/SUP%201.png',
+    sectionImages: [
+      '/Projects/SUP/SUP%201.png',
+      '/Projects/SUP/SUP%202.png',
+      '/Projects/SUP/SUP%203.png',
+      '/Projects/SUP/SUP%204.png',
+      '/Projects/SUP/SUP%205.png',
+      '/Projects/SUP/SUP%206.png',
+      '/Projects/SUP/SUP%207.png',
+    ],
     openUrl: '/projects/project-two',
   },
   {
