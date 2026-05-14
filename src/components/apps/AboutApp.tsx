@@ -48,8 +48,13 @@ Comfortable working across the full design cycle — from understanding requirem
         role: 'UI/UX Designer',
         company: 'FinAgg Technologies',
         period: 'Jan 2022 – May 2023',
-        description: 'One line about what you did here.',
-      },
+        description: `Led 0→1 product design for a fintech platform focused on MSME lending, shaping the experience from early concept to execution
+Revamped the dashboard experience, improving information architecture, clarity, and overall usability
+Designed the mobile app experience for lending workflows, ensuring a seamless and intuitive user journey
+Created integrated journeys within partner banking applications, enabling smoother cross-platform experiences
+Established foundational design processes, working closely with product and engineering to bring structure and consistency to the workflow`,
+    },
+      
   ],
 
   links: [
