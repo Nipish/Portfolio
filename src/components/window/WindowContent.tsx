@@ -55,15 +55,20 @@ const PROJECTS: ProjectEntry[] = [
     ],
     openUrl: '/projects/project-two',
   },
-  {
-    title: 'Project Three',
-    description:
-      'Replace this with one or two lines about what the app does and why it matters.',
-    imageSrc: '/icons/contact.png',
-    sectionImages: ['/icons/contact.png'],
-    openUrl: '/projects/project-three',
-  },
 ];
+
+const PORTFOLIO_SOCIAL = [
+  {
+    label: 'Behance',
+    href: 'https://www.behance.net/nipishsaini',
+    iconSrc: '/icons/behance.png',
+  },
+  {
+    label: 'Dribbble',
+    href: 'https://dribbble.com/Nipish',
+    iconSrc: '/icons/dribbble.png',
+  },
+] as const;
 
 // ─── Component ────────────────────────────────────────────────────────────────
 //
@@ -235,6 +240,35 @@ function ProjectsApp({ isMaximized }: { isMaximized: boolean }) {
             </p>
           </button>
         ))}
+        <div
+          className={`p-3 flex flex-col gap-2 text-left min-h-0 ${
+            isMaximized ? '' : 'col-span-2'
+          }`}
+        >
+          <h3 className="font-pixel text-[9px] text-[#1a1a1a] tracking-wide leading-snug">
+            More case studies to be added soon, for now you can check out:
+          </h3>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            {PORTFOLIO_SOCIAL.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center no-underline opacity-90 hover:opacity-100"
+                title={item.label}
+              >
+                <img
+                  src={item.iconSrc}
+                  alt={`${item.label} (opens in new tab)`}
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 object-contain shrink-0"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </AppShell>
   );
@@ -257,14 +291,20 @@ function ResumeAppComponent() {
 }
 
 function ContactApp() {
+  const email = 'nipishsaini13@gmail.com';
   return (
     <AppShell title="Contact">
-      <p className="font-pixel text-[9px] text-[#333] leading-relaxed">
-        Replace this with your <strong>ContactApp</strong> component.
-        <br />
-        <br />
-        📁 /src/components/apps/ContactApp.tsx
-      </p>
+      <div className="flex flex-col gap-3 p-1">
+        <p className="font-vt323 text-[16px] text-[#333] leading-normal">
+          Reach me by email:
+        </p>
+        <a
+          href={`mailto:${email}`}
+          className="inline-flex w-fit items-center gap-1 font-pixel text-[8px] text-[#1a1a1a] uppercase px-3 py-2 bg-[#ece9d8] border-2 border-t-white border-l-white border-b-[#808080] border-r-[#808080] hover:bg-[#d4d0c8] no-underline"
+        >
+          {email}
+        </a>
+      </div>
     </AppShell>
   );
 }

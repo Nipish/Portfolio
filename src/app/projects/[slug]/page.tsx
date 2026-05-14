@@ -31,10 +31,6 @@ const PROJECT_PAGES: Record<string, ProjectPageData> = {
       '/Projects/SUP/SUP%207.png',
     ],
   },
-  'project-three': {
-    title: 'Project Three',
-    sectionImages: ['/icons/contact.png'],
-  },
 };
 
 export default function ProjectPage({

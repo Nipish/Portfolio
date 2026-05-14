@@ -38,7 +38,11 @@ Comfortable working across the full design cycle — from understanding requirem
       role: 'UI/UX Designer',
       company: 'Infinite Locus',
       period: 'May 2023 – Apr 2025',
-      description: 'One line about what you did here.',
+      description: `Worked in a service-based setup, contributing to a multi-platform product across web and mobile.
+Handled design across admin and client-facing panels, along with mobile and tablet applications — ensuring consistency in experience despite different user roles and contexts.
+Built a scalable design system from the ground up, defining typography and color tokens with support for both dark and light modes. This helped bring structure to the product and made it easier to maintain consistency across features and platforms.
+Collaborated closely with developers to ensure accurate implementation, and worked directly with stakeholders to align on requirements, iterate on feedback, and move things forward without unnecessary friction.
+Comfortable working across the full design cycle — from understanding requirements to delivering production-ready designs — especially in environments where things are still evolving.`,
     },
     {
         role: 'UI/UX Designer',
